@@ -1,0 +1,22 @@
+type Lead {
+  enteredBy: String!
+  reviewedBy: String!
+  name: String!
+  description: String!
+  phoneNumber
+  emailAddress
+  streetAddress
+  city
+  state
+  zipcode
+  preferedContactMethod
+  region: String
+  mobile: Boolean
+  comment: String
+  booked: Boolean!
+  archived: Boolean
+}
+
+type Query {
+  allLeads: [Lead]!
+}

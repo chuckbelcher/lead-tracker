@@ -1,0 +1,25 @@
+query {
+  allLinks {
+    data {
+      name
+      description
+      url
+      archived
+      _id
+    }
+  }
+}
+
+mutation {
+  createLink(
+    data: {
+      name: "Google"
+      description: "Search Engine"
+      url: "http://www.google.com"
+      archived: false
+    }
+  ) {
+    name
+    _id
+  }
+}
