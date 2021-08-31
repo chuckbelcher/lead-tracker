@@ -25,14 +25,40 @@ query {
   }
 `;
 
-const CREATE_LINK = `
-    mutation($name: String!, $url: String!, $description: String! ) {
-        createLink( data: { name:$name, url: $url, description: $description, archived: false }) {
+const CREATE_LEAD = `
+    mutation(
+        $enteredBy: String!,
+        $name: String!, 
+        $description: String!,
+        $phoneNumber: String,
+        $emailAddress: String,
+        $streetAddress: String,
+        $city: String,
+        $state: String,
+        $zipcode: String,
+        $preferedContactMethod: String,
+        $region: String,
+        $mobile: Boolean,
+        $source: String! ) {
+        createLead( 
+            data: { 
+                enteredBy: $enteredBy
+                name: $name
+                description: $description
+                phoneNumber: $phoneNumber
+                emailAddress: $emailAddress
+                streetAddress: $streetAddress
+                city: $city
+                state: $state
+                zipcode: $zipcode
+                preferedContactMethod: $preferedContactMethod
+                region: $region
+                mobile: $mobile
+                source: $source
+                archived: false
+            }) {
             name
             _id
-            url
-            description
-            archived
         }
     }
 `;
@@ -49,9 +75,9 @@ const UPDATE_LINK = `
     }
 `;
 
-const DELETE_LINK = `
+const DELETE_LEAD = `
     mutation($id: ID! ) {
-        deleteLink(id: $id) {
+        deleteLead(id: $id) {
             _id
         }
     }
@@ -59,7 +85,7 @@ const DELETE_LINK = `
 
 module.exports = {
     GET_LEADS,
-    CREATE_LINK,
+    CREATE_LEAD,
     UPDATE_LINK,
-    DELETE_LINK,
+    DELETE_LEAD,
 };

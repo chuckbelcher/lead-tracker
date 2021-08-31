@@ -1,18 +1,44 @@
-const axios = require('axios');
 require('dotenv').config();
-const { CREATE_LINK } = require('./utils/linkQueries');
+const { CREATE_LEAD } = require('./utils/linkQueries');
 const sendQuery = require('./utils/sendQuery');
 const formattedResponse = require('./utils/formattedResponse');
 
 exports.handler = async (event) => {
-    const {name, url, description} =  JSON.parse(event.body);
-    const variables = {name, url, description, archived: false}
+    const {
+        name,
+        description,
+        phoneNumber,
+        emailAddress,
+        streetAddress,
+        city,
+        state,
+        zipcode,
+        preferedContactMethod,
+        region,
+        mobile,
+        source } = JSON.parse(event.body);
+    const variables = {
+        enteredBy: "Lead Tracker",
+        name,
+        description,
+        phoneNumber,
+        emailAddress,
+        streetAddress,
+        city,
+        state,
+        zipcode,
+        preferedContactMethod,
+        region,
+        mobile,
+        source,
+        archived: false
+    }
 
-    try{
-        const {createLink: newLink} = await sendQuery(CREATE_LINK, variables);
-        return formattedResponse(200, newLink);
+    try {
+        const { createLead: newLead } = await sendQuery(CREATE_LEAD, variables);
+        return formattedResponse(200, newLead);
     } catch (err) {
         console.error(err)
-        formattedResponse(500, {ERROR: "Can't get there from here"})
+        formattedResponse(500, { ERROR: "Can't get there from here" })
     }
 }
