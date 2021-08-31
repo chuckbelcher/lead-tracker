@@ -1,19 +1,20 @@
 type Lead {
   enteredBy: String!
-  reviewedBy: String!
+  reviewedBy: String
   name: String!
   description: String!
-  phoneNumber
-  emailAddress
-  streetAddress
-  city
-  state
-  zipcode
-  preferedContactMethod
+  phoneNumber: String
+  emailAddress: String
+  streetAddress: String
+  city: String
+  state: String
+  zipcode: String
+  preferedContactMethod: String
   region: String
   mobile: Boolean
   comment: String
-  booked: Boolean!
+  booked: Boolean
+  source: String!
   archived: Boolean
 }
 
