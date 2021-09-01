@@ -63,16 +63,50 @@ const CREATE_LEAD = `
     }
 `;
 
-const UPDATE_LINK = `
-    mutation($id: ID!, $archived: Boolean!, $name: String!, $url: String!, $description: String! ) {
-        updateLink(id: $id, data: { name:$name, url: $url, description: $description, archived: $archived }) {
-            name
-            _id
-            url
-            description
-            archived
-        }
+const UPDATE_LEAD = `
+mutation(
+    $id: ID!,
+    $enteredBy: String!,
+    $reviewedBy: String
+    $name: String!, 
+    $description: String!,
+    $phoneNumber: String,
+    $emailAddress: String,
+    $streetAddress: String,
+    $city: String,
+    $state: String,
+    $zipcode: String,
+    $preferedContactMethod: String,
+    $region: String,
+    $mobile: Boolean,
+    $booked: Boolean,
+    $comment: String,
+    $source: String! ) {
+    updateLead( 
+        id: $id,
+        data: {  
+            enteredBy: $enteredBy
+            reviewedBy: $reviewedBy
+            name: $name
+            description: $description
+            phoneNumber: $phoneNumber
+            emailAddress: $emailAddress
+            streetAddress: $streetAddress
+            city: $city
+            state: $state
+            zipcode: $zipcode
+            preferedContactMethod: $preferedContactMethod
+            region: $region
+            mobile: $mobile
+            booked: $booked
+            source: $source
+            archived: false
+            comment: $comment
+        }) {
+        name
+        _id
     }
+}
 `;
 
 const DELETE_LEAD = `
@@ -86,6 +120,6 @@ const DELETE_LEAD = `
 module.exports = {
     GET_LEADS,
     CREATE_LEAD,
-    UPDATE_LINK,
+    UPDATE_LEAD,
     DELETE_LEAD,
 };
