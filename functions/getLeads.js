@@ -1,5 +1,5 @@
 require('dotenv').config();
-const { GET_LEADS } = require('./utils/linkQueries');
+const { GET_LEADS } = require('./utils/leadQueries');
 const sendQuery = require('./utils/sendQuery');
 const formattedResponse = require('./utils/formattedResponse');
 
