@@ -1,28 +1,28 @@
 import React from 'react'
 
-export default function LinkCard({link, refreshLinks}) {
+export default function LeadCard({lead, refreshLeads}) {
 
-    const archiveLink = async () => {
-        link.archived = true;
+    const archiveLead = async () => {
+        lead.archived = true;
         try {
-            await fetch('/.netlify/functions/updateLink', {
+            await fetch('/.netlify/functions/updateLead', {
                 method: 'PUT',
-                body: JSON.stringify(link)
+                body: JSON.stringify(lead)
             });
-            refreshLinks();
+            refreshLeads();
         } catch (err) {
             console.error(err);
         }
     }
 
-    const deleteLink = async () => {
+    const deleteLead = async () => {
         try {
-            const id = link._id
-            await fetch('/.netlify/functions/deleteLink', {
+            const id = lead._id
+            await fetch('/.netlify/functions/deleteLead', {
                 method: 'DELETE',
                 body: JSON.stringify({id})
             });
-            refreshLinks();
+            refreshLeads();
         } catch (err) {
             console.error(err);
         }
@@ -31,16 +31,22 @@ export default function LinkCard({link, refreshLinks}) {
     return (
         <div className="card my-3">
             <div className="card-header">
-                {link.name}
+                {lead.name}
             </div>
             <div className="card-body">
-                <a href={link.url}>{link.url}</a>
-                <p>{link.description}</p>
-                <p>Archived: {link.archived.toString()}</p>
+                <p>Source: {lead.source}</p>
+                <p>Description: {lead.description}</p>
+                <h5>Location</h5>
+                <p>
+                    {lead.city}
+                    {lead.phoneNumber}
+                </p>
+                <p>Comment: {lead.comment ? lead.comment: 'No comments'}</p>
+
             </div>
             <div className="card-footer">
-                <button className="btn btn-warning mx-2" onClick={archiveLink}>Archive</button>
-                <button className="btn btn-danger" onClick={deleteLink}>Delete</button>
+                <button className="btn disabled btn-primary mx-2" onClick={archiveLead}>Archive</button>
+                <button className="btn disabled btn-danger" onClick={deleteLead}>Delete</button>
             </div>
         </div>
     )
