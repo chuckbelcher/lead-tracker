@@ -45,8 +45,8 @@ export default function LeadCard({lead, refreshLeads}) {
 
             </div>
             <div className="card-footer">
-                <button className="btn disabled btn-primary mx-2" onClick={archiveLead}>Archive</button>
-                <button className="btn disabled btn-danger" onClick={deleteLead}>Delete</button>
+                <button className="btn btn-primary mx-2" onClick={archiveLead}>Archive</button>
+                <button className="btn btn-danger" onClick={deleteLead}>Delete</button>
             </div>
         </div>
     )

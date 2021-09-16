@@ -81,6 +81,7 @@ mutation(
     $mobile: Boolean,
     $booked: Boolean,
     $comment: String,
+    $archived: Boolean,
     $source: String! ) {
     updateLead( 
         id: $id,
@@ -100,7 +101,7 @@ mutation(
             mobile: $mobile
             booked: $booked
             source: $source
-            archived: false
+            archived: $archived
             comment: $comment
         }) {
         name

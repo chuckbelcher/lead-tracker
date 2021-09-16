@@ -47,6 +47,7 @@ exports.handler = async (event) => {
 
     try {
         const { updateLead } = await sendQuery(UPDATE_LEAD, variables);
+        console.log(variables)
         return formattedResponse(200, updateLead);
     } catch (err) {
         console.error(err)
