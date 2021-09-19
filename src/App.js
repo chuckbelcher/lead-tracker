@@ -4,6 +4,7 @@ import './App.css';
 
 function App() {
   const [ leads, setLeads ] = useState([]);
+  console.log(leads);
 
   const loadLeads = async() => {
     try {
