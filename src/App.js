@@ -24,7 +24,7 @@ function App() {
     <div className="container py-5">
       <h1 className="text-center mb-5">Sudzy Pets Lead Tracking System</h1>
       <div className="container">
-        <LeadList leads={leads} refreshLeads={loadLeads} />
+        {/* <LeadList leads={leads} refreshLeads={loadLeads} /> */}
       </div>
     </div>
   );
