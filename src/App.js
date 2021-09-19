@@ -1,12 +1,12 @@
-import { useState, useEffect } from 'react/cjs/react.development';
+//import { useState, useEffect } from 'react/cjs/react.development';
 //import LeadList from './components/LeadList';
 import './App.css';
 
 function App() {
-  const [ leads, setLeads ] = useState([]);
-  console.log(leads);
+ // const [ leads, setLeads ] = useState([]);
+ // console.log(leads);
 
-  const loadLeads = async() => {
+  /* const loadLeads = async() => {
     try {
       const res = await fetch('/.netlify/functions/getLeads');
       const leads = await res.json();
@@ -19,7 +19,7 @@ function App() {
 
   useEffect(() => {
     loadLeads();
-  }, []);
+  }, []); */
 
   return (
     <div className="container py-5">
