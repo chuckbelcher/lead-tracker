@@ -7,9 +7,9 @@ function App() {
 
   const loadLeads = async() => {
     try {
-      const res = await fetch('/.netlify/functions/getLeads');
+      const res = await fetch('https://zen-wright-e87b90.netlify.app/.netlify/functions/getLeads');
       console.log(res);
-      //const leads = await res.json();
+      const leads = await res.json();
       setLeads('chuck');
       console.log(leads);
     } catch (err) {
