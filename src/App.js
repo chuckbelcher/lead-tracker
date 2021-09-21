@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react/cjs/react.development';
+import { useEffect } from 'react/cjs/react.development';
 //import LeadList from './components/LeadList';
 import './App.css';
 
