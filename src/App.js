@@ -3,14 +3,15 @@ import { useState, useEffect } from 'react/cjs/react.development';
 import './App.css';
 
 function App() {
-  const [ leads, setLeads ] = useState([]);
+  //const [ leads, setLeads ] = useState([]);
 
   const loadLeads = async() => {
     try {
-      const res = await fetch('/.netlify/functions/getLeads');
-      const leads = await res.json();
-      setLeads(leads);
-      console.log(leads);
+      await fetch('/.netlify/functions/getLeads');
+      //const res = await fetch('/.netlify/functions/getLeads');
+      //const leads = await res.json();
+      //setLeads(leads);
+      //console.log(leads);
     } catch (err) {
       console.log('ERROR in loadLeads')
       console.error(err);
@@ -21,8 +22,6 @@ function App() {
   useEffect(() => {
     loadLeads();
   }, []); 
-
-  console.log(leads);
 
   return (
     <div className="container py-5">
