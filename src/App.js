@@ -7,23 +7,20 @@ function App() {
 
   const loadLeads = async() => {
     try {
-      const res = await fetch('https://zen-wright-e87b90.netlify.app/.netlify/functions/getLeads');
-      console.log(res);
+      const res = await fetch('/.netlify/functions/getLeads');
       const leads = await res.json();
       setLeads(leads);
       console.log(leads);
     } catch (err) {
-      console.log(leads)
-      console.log("problem in loadLeads")
+      console.log('ERROR in loadLeads')
       console.error(err);
     }
   }
   
 
-   useEffect(() => {
-    console.log("running loadLeads")
+  useEffect(() => {
     loadLeads();
-  }, []);  
+  }, []); 
 
   console.log(leads);
 

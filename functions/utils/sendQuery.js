@@ -2,7 +2,7 @@ const axios = require('axios');
 require('dotenv').config();
 
 module.exports = async (query, variables) => {
-    console.log("running the sendquery function");
+    console.log("running the send query function");
     const {
         data: { data, errors },
     } = await axios({
