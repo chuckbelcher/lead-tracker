@@ -1,21 +1,21 @@
-//import { useEffect } from 'react/cjs/react.development';
+import { useState } from 'react/cjs/react.development';
 //import LeadList from './components/LeadList';
 import './App.css';
 
 function App() {
-  //const [ leads, setLeads ] = useState([]);
+  const [ leads, setLeads ] = useState([]);
 
   const loadLeads = () => {
-    //try {
+    try {
       //await fetch('/.netlify/functions/getLeads');
-      //const res = await fetch('/.netlify/functions/getLeads');
-      //const leads = await res.json();
-      //setLeads(leads);
-      //console.log(leads);
+      const res = await fetch('/.netlify/functions/getLeads');
+      const leads = await res.json();
+      setLeads(leads);
+      console.log(leads);
       console.log("trying load leads")
-    //}  catch (err) {
-    //  console.log('ERROR in loadLeads')
-    //  console.error(err);
+    }  catch (err) {
+      console.log('ERROR in loadLeads')
+      console.error(err);
     //} 
   }
   
