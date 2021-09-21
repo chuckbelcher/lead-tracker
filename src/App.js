@@ -7,11 +7,12 @@ function App() {
 
   const loadLeads = async() => {
     try {
-      await fetch('/.netlify/functions/getLeads');
+      //await fetch('/.netlify/functions/getLeads');
       //const res = await fetch('/.netlify/functions/getLeads');
       //const leads = await res.json();
       //setLeads(leads);
       //console.log(leads);
+      console.log("trying load leads")
     } catch (err) {
       console.log('ERROR in loadLeads')
       console.error(err);
