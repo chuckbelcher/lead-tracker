@@ -17,9 +17,10 @@ function App() {
   }
   
 
-/*   useEffect(() => {
+   useEffect(() => {
+    console.log("running loadLeads")
     loadLeads();
-  }, []);  */
+  }, []);  
 
   console.log(leads);
 
