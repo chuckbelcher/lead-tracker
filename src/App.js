@@ -16,7 +16,7 @@ function App() {
     }  catch (err) {
       console.log('ERROR in loadLeads')
       console.error(err);
-    //} 
+    } 
   }
   
   loadLeads();
@@ -24,7 +24,7 @@ function App() {
   //useEffect(() => {
   //  loadLeads();
   //}, []); 
-  console.log(leads)
+
 
   return (
     <div className="container py-5">
