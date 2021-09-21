@@ -24,6 +24,7 @@ function App() {
   //useEffect(() => {
   //  loadLeads();
   //}, []); 
+  console.log(leads)
 
   return (
     <div className="container py-5">
