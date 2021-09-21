@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react/cjs/react.development';
+import axios from 'axios'
 //import LeadList from './components/LeadList';
 import './App.css';
 
@@ -7,7 +8,7 @@ function App() {
 
   const loadLeads = async() => {
     try {
-      const res = await fetch('/.netlify/functions/getLeads');
+      const res = await axios('/.netlify/functions/getLeads');
       const leads = await res.json();
       setLeads(leads);
       console.log(leads);
