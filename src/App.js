@@ -5,7 +5,7 @@ import './App.css';
 function App() {
   const [ leads, setLeads ] = useState([]);
 
-  const loadLeads = () => {
+  const loadLeads = async () => {
     try {
       //await fetch('/.netlify/functions/getLeads');
       const res = await fetch('/.netlify/functions/getLeads');
