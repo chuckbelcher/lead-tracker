@@ -19,10 +19,11 @@ function App() {
     //} 
   }
   
+  loadLeads();
 
-  useEffect(() => {
-    loadLeads();
-  }, []); 
+  //useEffect(() => {
+  //  loadLeads();
+  //}, []); 
 
   return (
     <div className="container py-5">
