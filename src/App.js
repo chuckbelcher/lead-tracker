@@ -13,10 +13,10 @@ function App() {
       //setLeads(leads);
       //console.log(leads);
       console.log("trying load leads")
-    } catch (err) {
+    } /* catch (err) {
       console.log('ERROR in loadLeads')
       console.error(err);
-    }
+    } */
   }
   
 
