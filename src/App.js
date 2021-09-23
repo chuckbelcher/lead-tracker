@@ -1,21 +1,37 @@
-//import { useEffect } from 'react/cjs/react.development';
-import Test from './test';
+import React, { useState, useEffect } from 'react';
+import LeadList from './components/LeadList';
+import './App.css';
 
 function App() {
+  const [ leads, setLeads ] = useState([]);
 
- /*  useEffect(() => {
-    const loadLeads = () => {
-      console.log("bla bla bla")
-    }
+  const loadLeads = async () => {
+    try {
+      const res = await fetch('/.netlify/functions/getLeads');
+      console.log(typeof res);
+      const leads = await res.json();
+      console.log("running typ of")
+      setLeads(leads);
+      console.log("load leads")
+    }  catch (err) {
+      console.log('ERROR in loadLeads')
+      console.error(err);
+    } 
+  }
+
+  
+  
+  useEffect(() => {
     loadLeads();
-  }, []);  */
+  }, []); 
 
-  console.log("Now displaying hello wold");
-
+  //console.log(leads);
   return (
     <div className="container py-5">
-      <h1 className="text-center mb-5">Hello World</h1>
-      <Test />
+      <h1 className="text-center mb-5">Sudzy Pets Lead Tracking System</h1>
+      <div className="container">
+        <LeadList leads={leads} refreshLeads={loadLeads} />
+      </div>
     </div>
   );
 }
