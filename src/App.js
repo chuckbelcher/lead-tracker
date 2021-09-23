@@ -8,11 +8,8 @@ function App() {
   const loadLeads = async () => {
     try {
       const res = await fetch('/.netlify/functions/getLeads');
-      console.log(typeof res);
       const leads = await res.json();
-      console.log("running typ of")
       setLeads(leads);
-      console.log("load leads")
     }  catch (err) {
       console.log('ERROR in loadLeads')
       console.error(err);
