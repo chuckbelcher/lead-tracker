@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react/cjs/react.development';
+import { useEffect } from 'react/cjs/react.development';
 //import LeadList from './components/LeadList';
 import './App.css';
 
 function App() {
-  const [ leads, setLeads ] = useState([]);
+  //const [ leads, setLeads ] = useState([]);
 
   /* const loadLeads = async () => {
     try {
@@ -20,12 +20,9 @@ function App() {
   } */
 
   const loadLeads = () => {
-    setLeads({
-      name: "chuck",
-      description: "something"
-    });
+    
 
-    console.log(leads)
+    console.log("bla bla bla")
   }
   
 
