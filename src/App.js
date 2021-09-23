@@ -9,6 +9,8 @@ function App() {
     loadLeads();
   }, []); 
 
+  console.log("Now displaying hello wold");
+
   return (
     <div className="container py-5">
       <h1 className="text-center mb-5">Hello World</h1>
