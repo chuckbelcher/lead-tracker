@@ -9,7 +9,7 @@ function App() {
       <>
         <Navbar />
         <Switch>
-          <Route path="/" component={Leads} />
+          <Route path="/*" component={Leads} />
         </Switch>
       </>
     </Router>
