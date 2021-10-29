@@ -14,10 +14,10 @@ export default function Navbar() {
             </StyledNavBrand>
             <StyledNavItems>
                 {!isAuthenticated &&
-                    <li><button onClick={() => loginWithPopup()}>Login</button></li>
+                    <li><button className=" btn btn-primary" onClick={() => loginWithPopup()}>Login</button></li>
                 }
                 {isAuthenticated &&
-                    <li><button onClick={ () => logout({ returnTo: window.location.origin })}>Logout</button></li>
+                    <li><button className=" btn btn-danger" onClick={ () => logout({ returnTo: window.location.origin })}>Logout</button></li>
                 }
             </StyledNavItems>
         </StyledNavbar>

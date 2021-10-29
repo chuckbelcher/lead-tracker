@@ -23,7 +23,7 @@ export default function Leads() {
       }, []); 
 
     return (
-        <div className="container">
+        <div>
             <LeadList leads={leads} refreshLeads={loadLeads} />
         </div >
     )

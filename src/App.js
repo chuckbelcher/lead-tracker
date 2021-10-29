@@ -1,17 +1,17 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Leads from './components/Leads/Leads'
+import Main from './pages/Main'
 import Navbar from './components/Nav/Navbar';
 
 function App() {
   return (
     <Router>
-      <>
+      <div class="container">
         <Navbar />
         <Switch>
-          <Route path="/*" component={Leads} />
+          <Route path="/*" component={Main} />
         </Switch>
-      </>
+      </div>
     </Router>
   );
 }
