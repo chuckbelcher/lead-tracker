@@ -15,10 +15,9 @@ export const Strong = styled.strong`
     font-weight: bold;
 `
 export const SplashImage = styled.img`
-    min-height: 80%;
-    width: 80%;
+    width: 100%;
     height: auto;
-    position: fixed;
-    top: 5;
-    left: 5;
+    display: block;
+    margin: auto;
+    padding-top: 40px;
 `
