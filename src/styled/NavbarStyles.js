@@ -7,7 +7,7 @@ export const StyledNavbar = styled.nav`
     padding: 20px;
 `
 export const StyledNavBrand = styled.div`
-    font-size: 1.4rem;
+    font-size: 2rem;
     text-align: left;
     & > a {
         text-decoration: none;

@@ -14,3 +14,11 @@ export const StyledTitle = styled.h1`
 export const Strong = styled.strong`
     font-weight: bold;
 `
+export const SplashImage = styled.img`
+    min-height: 80%;
+    width: 80%;
+    height: auto;
+    position: fixed;
+    top: 5;
+    left: 5;
+`
