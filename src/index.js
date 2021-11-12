@@ -2,10 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.css'
 import App from './App';
+import { Auth0Provider } from "@auth0/auth0-react";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Auth0Provider
+    domain="pateogroup.us.auth0.com"
+    clientId="Cb6HpzzwoPxK9YgEtT2C2aSCFH6QGsVk"
+    redirectUri={window.location.origin}
+  >
+      <App />
+    </Auth0Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
