@@ -38,8 +38,8 @@ export default function LeadCard({lead, refreshLeads}) {
                 <p>Description: {lead.description}</p>
                 <h5>Location</h5>
                 <p>
-                    {lead.city}
-                    {lead.phoneNumber}
+                    <h6>{lead.city} {lead.state}</h6>
+                    <h6>{lead.phoneNumber}</h6>
                 </p>
                 <p>Comment: {lead.comment ? lead.comment: 'No comments'}</p>
 
